@@ -20,19 +20,32 @@ function ExpenseChart() {
         <VictoryPie 
             colorScale={["#e74c3c", "#2ecc71"]}
             data={[
-                { x: "Expenses", y: totalExpensePercentage},
-                { x: "Incomes", y: totalIncomePercentage},
+                { x: "Expenses", y: totalExpensePercentage, label: `${totalExpensePercentage}% Expenses`},
+                { x: "Incomes", y: totalIncomePercentage, label: `${totalIncomePercentage}% Incomes`},
             ]}
             animate={{
                 duration: 200
             }}
-            labels={({datum}) => `${datum.y}%`}
+            /* labels={({datum}) => `${datum.y}% ${datum.x}`} */
+            /* cornerRadius={5}
+            padAngle={1} */
+            width={350}
+            height={350}
+            style={{
+                data: {
+                    stroke: "#222",
+                    strokeWidth: 2,
+                }}}
+            /* innerRadius={20} */
             labelComponent={<VictoryLabel
                 angle={45}
                 style={{
                     fill: "white",
                 }}
+                textAnchor="middle"
+                verticalAnchor="middle"
             />}
+            
         />
     )
 }

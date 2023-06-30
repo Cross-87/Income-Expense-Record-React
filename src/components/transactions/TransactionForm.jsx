@@ -14,11 +14,11 @@ function TransactionForm() {
             amount: +amount,
         });
         setDescription("");
-        setAmount(0);
+        setAmount("");
     }
 
     return (
-        <div>
+        <div className="my-5">
             <form onSubmit={onSubmit}>
                 <input type="text" placeholder="Enter a description" 
                     onChange={(e) => setDescription(e.target.value)}
@@ -30,7 +30,7 @@ function TransactionForm() {
                     className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
                     value={amount}
                 />
-                <button className="bg-indigo-700 text-white px-3 py-2 rounded-lg block mg-2 w-full">
+                <button className="bg-indigo-600 text-white px-3 py-2 rounded-lg block mg-2 w-full hover:bg-indigo-700 transition-colors">
                     Add Transaction
                 </button>
             </form>

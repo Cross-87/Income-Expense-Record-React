@@ -14,20 +14,20 @@ function IncomeExpenses() {
 
     const expense = amounts
                     .filter(item => item < 0)
-                    .reduce((acc, item) => (acc += item), 0) * -1
+                    .reduce((acc, item) => (acc += item), 0)
                     .toFixed(2);
 
   return (
-    <>
-        <div className="flex justify-between my-2">
+    <div className="my-3">
+        <div className="flex justify-between my-2 px-2">
             <h4>Income</h4>
-            <p>{income}</p>
+            <p className="underline underline-offset-4 decoration-green-400">{income}</p>
         </div>
-        <div className="flex justify-between my-2">
+        <div className="flex justify-between my-2 px-2">
             <h4>Expense</h4>
-            <p>{expense}</p>
+            <p className="underline underline-offset-4 decoration-red-400">{expense}</p>
         </div>
-    </>
+    </div>
   )
 }
 

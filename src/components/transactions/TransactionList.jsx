@@ -7,7 +7,7 @@ function TransactionList() {
   return (
     <> 
         <h3 className="text-slate-300 text-xl font-bold block">History</h3>
-        <ul>
+        <ul className="mt-2 text-black">
             {transactions.map(transaction => (
                 <TransactionItem transaction={transaction} key={transaction.id} />
             ))}
